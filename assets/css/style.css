@@ -14,6 +14,7 @@
   --grayish-blue: hsl(233, 8%, 79%);
   --dark-grayish-blue: hsl(236, 13%, 42%);
   --very-dark-blue: hsl(240, 100%, 5%);
+  --transition-speed: 0.3s;
 }
 
 * {
@@ -53,7 +54,7 @@ header > button {
 }
 
 .nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: -22rem;
   height: 100vh;
@@ -63,7 +64,8 @@ header > button {
   display: flex;
   flex-direction: column;
   gap: 6rem;
-  transition: right 0.3s ease-in-out;
+  transition: right var(--transition-speed) ease-in-out;
+  z-index: 11;
 }
 .nav > button {
   background: none;
@@ -94,7 +96,25 @@ header > button {
 
 .nav.nav-open {
   right: 0rem;
-  transition: right 0.3s ease-in-out;
+  transition: right var(--transition-speed) ease-in-out;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity var(--transition-speed) ease-in-out;
+  pointer-events: none;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 main {
@@ -167,7 +187,7 @@ p {
 .new article h3 {
   font-size: 1.3rem;
   font-weight: var(--font-bold);
-  color: var(--off-white);
+  color: var --off-white;
   margin-bottom: 1rem;
   cursor: pointer;
 }
