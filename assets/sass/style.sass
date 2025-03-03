@@ -1,0 +1,213 @@
+@font-face
+    font-family: Inter
+    src: url(../fonts/Inter-VariableFont_slnt\,wght.ttf) format('truetype-variations')
+    font-weight: 100 900
+    font-style: normal
+
+
+:root
+    --font-normal: 400
+    --font-bold: 700
+    --font-bolder: 800
+
+    --soft-orange: hsl(35, 77%, 62%)
+    --soft-red: hsl(5, 85%, 63%)
+
+    --off-white: hsl(36, 100%, 99%)
+    --grayish-blue: hsl(233, 8%, 79%)
+    --dark-grayish-blue: hsl(236, 13%, 42%)
+    --very-dark-blue: hsl(240, 100%, 5%)
+
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-size: 15px
+    font-family: 'Inter', sans-serif
+
+
+img
+    max-width: 100%
+    height: auto
+    object-fit: cover
+
+body
+    min-height: 100vh
+
+
+header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 6rem
+    padding: 0 1rem
+
+    &>img
+        cursor: pointer
+
+    &>button
+        background: none
+        border: none
+        cursor: pointer
+
+
+.nav
+    position: absolute
+    top: 0
+    right: -22rem
+    height: 100vh
+    width: 18rem
+    background-color: var(--off-white)
+    padding: 3rem 2rem
+    display: flex
+    flex-direction: column
+    gap: 6rem
+    transition: right 0.3s ease-in-out
+
+    &>button
+        background: none
+        border: none
+        cursor: pointer
+        margin-inline-start: auto
+        margin-inline-end: 0
+
+    &>ul
+        list-style: none
+        display: flex
+        flex-direction: column
+        gap: 2rem
+        
+        &>li
+            color: var(--very-dark-blue)
+            cursor: pointer
+
+            &>a
+                text-decoration: none
+                color: inherit
+                font-size: 1.4rem
+                font-weight: var(--font-bold)
+
+            &:hover
+                color: var(--soft-orange)
+
+
+.nav.nav-open
+    right: 0rem
+    transition: right 0.3s ease-in-out
+
+main
+    padding: 0 1rem
+    margin-top: 1rem
+    display: grid
+    gap: 2rem
+
+section
+    margin-bottom: 2rem
+
+h1
+    font-size: 2.8rem
+    font-weight: var(--font-bolder)
+    color: var(--very-dark-blue)
+
+p
+    color: var(--dark-grayish-blue)
+    line-height: 1.6
+
+.right-future
+    display: flex
+    flex-direction: column
+    gap: 1rem
+
+    div
+        display: flex
+        flex-direction: column
+        gap: 1.5rem
+
+        a
+            background: var(--soft-red)
+            width: fit-content
+            padding: 1rem 2rem
+            font-size: 1rem
+            font-weight: var(--font-bolder)
+            color: var(--very-dark-blue)
+            text-decoration: none
+            cursor: pointer
+            letter-spacing: 0.2rem
+            text-transform: uppercase
+.new
+    background-color: var(--very-dark-blue)
+    color: var(--off-white)
+    padding: 2rem 1.5rem
+    gap: 2.4rem
+    display: flex
+    flex-direction: column
+
+    h2
+        color: var(--soft-orange)
+        font-size: 2rem
+
+    article+article
+        border-top: 1px solid var(--dark-grayish-blue)
+        padding-top: 2rem
+
+    article
+        h3
+            font-size: 1.3rem
+            font-weight: var(--font-bold)
+            color: var(--off-white)
+            margin-bottom: 1rem
+
+.popular
+    display: flex
+    flex-direction: column
+    gap: 2rem
+
+    article
+        display: grid
+        grid-template-columns: 1fr 2fr
+        gap: 2rem
+        height: max-content
+
+        img
+            height: 100%
+
+        div
+            display: flex
+            flex-direction: column
+            gap: 0.5rem
+
+            span
+                color: var(--soft-red)
+                font-size: 2rem
+                font-weight: var(--font-bolder)
+            h3
+                font-size: 1.2rem
+                font-weight: var(--font-bolder)
+                color: var(--very-dark-blue)
+
+            p
+                color: var(--dark-grayish-blue)
+                line-height: 1.6
+
+            button
+                background-color: var(--soft-orange)
+                color: var(--off-white)
+                padding: 0.8rem 1.5rem
+                border: none
+                cursor: pointer
+                font-size: 1.4rem
+                font-weight: var(--font-bold)
+
+                &:hover
+                    background-color: var(--soft-red)
+.visually-hidden
+    position: absolute
+    width: 1px
+    height: 1px
+    margin: -1px
+    padding: 0
+    overflow: hidden
+    clip: rect(0, 0, 0, 0)
+    white-space: nowrap
+    border-width: 0
