@@ -3,18 +3,26 @@ const openNav = document.getElementById("open-menu");
 const closeNav = document.getElementById("close-icon");
 const body = document.body;
 
+document.addEventListener("load", () => {
+  if (window.innerWidth < 768) {
+    nav.classList.add("hidden");
+  } else {
+    nav.classList.remove("hidden");
+  }
+});
+
 window.addEventListener("resize", () => {
   if (window.innerWidth < 768) {
-    nav.hidden = true;
+    nav.classList.add("hidden");
   } else {
-    nav.hidden = false;
+    nav.classList.remove("hidden");
   }
 });
 
 openNav.addEventListener("click", () => {
-  nav.classList.add("nav-open");
-  nav.hidden = false;
+  nav.classList.remove("hidden");
   setTimeout(() => {
+    nav.classList.add("nav-open");
     createOverlay();
     trapFocus();
   }, 100);
@@ -23,7 +31,8 @@ openNav.addEventListener("click", () => {
 closeNav.addEventListener("click", () => {
   nav.classList.remove("nav-open");
   removeOverlay();
-  setTimeout(() => (nav.hidden = true), 100);
+  setTimeout(() => nav.classList.add("hidden"), 100);
+  openNav.focus();
 });
 
 // Create overlay function
@@ -57,6 +66,9 @@ function trapFocus() {
       closeNav.click();
     }
 
+    if (window.innerWidth >= 768) {
+      return;
+    }
     if (e.key === "Tab") {
       if (e.shiftKey) {
         if (document.activeElement === firstFocusableElement) {

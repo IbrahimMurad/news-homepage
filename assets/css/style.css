@@ -90,8 +90,8 @@ header > button {
   font-size: 1.4rem;
   font-weight: var(--font-bold);
 }
-.nav > ul > li:hover {
-  color: var(--soft-orange);
+.nav > ul > li:hover, .nav > ul > li:focus {
+  color: var(--soft-red);
 }
 
 .nav.nav-open {
@@ -163,7 +163,7 @@ p {
   letter-spacing: 0.2rem;
   text-transform: uppercase;
 }
-.bright-future div a:hover {
+.bright-future div a:hover, .bright-future div a:focus {
   background: var(--very-dark-blue);
   color: var(--off-white);
 }
@@ -184,15 +184,19 @@ p {
   border-top: 1px solid var(--dark-grayish-blue);
   padding-top: 2rem;
 }
-.new article h3 {
+.new article h3 > a {
   font-size: 1.3rem;
   font-weight: var(--font-bold);
-  color: var --off-white;
-  margin-bottom: 1rem;
+  color: var(--off-white);
   cursor: pointer;
+  text-decoration: none;
 }
-.new article h3:hover {
+.new article h3 > a:hover, .new article h3 > a:focus {
   color: var(--soft-orange);
+}
+.new article p {
+  margin-top: 1rem;
+  color: var(--grayish-blue);
 }
 
 .popular {
@@ -219,13 +223,14 @@ p {
   font-size: 2rem;
   font-weight: var(--font-bolder);
 }
-.popular article div h3 {
+.popular article div h3 > a {
+  text-decoration: none;
   font-size: 1.2rem;
   font-weight: var(--font-bolder);
   color: var(--very-dark-blue);
   cursor: pointer;
 }
-.popular article div h3:hover {
+.popular article div h3 > a:hover, .popular article div h3 > a:focus {
   color: var(--soft-red);
 }
 .popular article div p {
@@ -255,6 +260,10 @@ p {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.nav.hidden {
+  display: none;
 }
 
 @media (min-width: 768px) {

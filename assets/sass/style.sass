@@ -93,8 +93,8 @@ header
                 font-size: 1.4rem
                 font-weight: var(--font-bold)
 
-            &:hover
-                color: var(--soft-orange)
+            &:hover, &:focus
+                color: var(--soft-red)
 
 
 .nav.nav-open
@@ -160,7 +160,7 @@ p
             letter-spacing: 0.2rem
             text-transform: uppercase
 
-            &:hover
+            &:hover, &:focus
                 background: var(--very-dark-blue)
                 color: var(--off-white)
 
@@ -181,15 +181,19 @@ p
         padding-top: 2rem
 
     article
-        h3
+        h3>a
             font-size: 1.3rem
             font-weight: var(--font-bold)
-            color: var (--off-white)
-            margin-bottom: 1rem
+            color: var(--off-white)
             cursor: pointer
+            text-decoration: none
 
-            &:hover
+            &:hover, &:focus
                 color: var(--soft-orange)
+        
+        p
+            margin-top: 1rem
+            color: var(--grayish-blue)
 
 .popular
     display: flex
@@ -214,13 +218,14 @@ p
                 color: var(--soft-red)
                 font-size: 2rem
                 font-weight: var(--font-bolder)
-            h3
+            h3>a
+                text-decoration: none
                 font-size: 1.2rem
                 font-weight: var(--font-bolder)
                 color: var(--very-dark-blue)
                 cursor: pointer
 
-                &:hover
+                &:hover, &:focus
                     color: var(--soft-red)
 
             p
@@ -249,6 +254,8 @@ p
     white-space: nowrap
     border-width: 0
 
+.nav.hidden
+    display: none
 
 @media (min-width: 768px)
 
